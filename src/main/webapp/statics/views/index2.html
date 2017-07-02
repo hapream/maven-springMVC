@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 顺序不能颠倒 -->
+    <script src="/statics/js/babel.min.js"></script>
+    <script src="/statics/js/react.js"></script>
+    <script src="/statics/js/react-dom.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    class MyTitle extends React.Component {
+        render() {
+            return <h1 style={{color: this.props.color}}>Hello World</h1>
+        }
+    };
+    ReactDOM.render(
+            <MyTitle color="red"/>,
+            document.getElementById("example")
+    )
+
+</script>
+</body>
+</html>

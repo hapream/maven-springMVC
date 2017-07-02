@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 顺序不能颠倒 -->
+    <script src="/statics/js/babel.min.js"></script>
+    <script src="/statics/js/react.js"></script>
+    <script src="/statics/js/react-dom.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    class MyTitle extends React.Component {
+        constructor(...args) {
+            super(...args);
+            this.state = {
+                name: 'World',
+                isClicked: false
+            };
+        }
+
+        handlerChange() {
+            let date = new Date();
+            let isCliecked = !this.state.isClicked;
+            this.setState({
+                isClicked: isCliecked,
+                name: isCliecked ? date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDay(): 'World'
+        })
+        }
+
+        render() {
+            return <h1 onClick={this.handlerChange.bind(this)}>
+                {'Hello ' + this.state.name}
+            </h1>
+        }
+    }
+
+    ReactDOM.render(
+            <MyTitle/>,
+            document.getElementById('example')
+    )
+</script>
+
+</body>
+</html>

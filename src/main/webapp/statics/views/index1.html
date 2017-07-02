@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/babel.min.js"></script>
+    <script src="../js/react.js"></script>
+    <script src="../js/react-dom.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    class MyTitle extends React.Component {
+        render() {
+            return <h1>Hello World</h1>
+        }
+    };
+    ReactDOM.render(
+            <MyTitle/>,
+            document.getElementById('example')
+    )
+</script>
+
+</body>
+</html>
